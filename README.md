@@ -7,8 +7,18 @@ This image will run [Neovim](http://neovim.org/) inside a
 [blog post](https://blog.jessfraz.com/posts/docker-containers-on-the-desktop.html)
 of Jessie Frazelle.
 
+Fire it up:
 ```bash
 $ docker run -it \
+    --name neovim \
+    erroneousboat/neovim
+```
+
+Use with configuration files and mounting a folder:
+```bash
+$ docker run -it \
+    -v $HOME/.nvim:/root/.nvim \
+    -v $HOME/myfolder:/data \
     --name neovim \
     erroneousboat/neovim
 ```
