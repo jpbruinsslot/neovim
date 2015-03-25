@@ -18,6 +18,7 @@ Use with configuration files and mounting a folder:
 ```bash
 $ docker run -it \
     -v $HOME/.nvim:/root/.nvim \
+    -v $HOME/.nvimrc:/root/.nvimrc \
     -v $HOME/myfolder:/data \
     --name neovim \
     erroneousboat/neovim
