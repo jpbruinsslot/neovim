@@ -6,7 +6,12 @@ RUN apt-get update && \
     apt-get install -y software-properties-common && \
     add-apt-repository -y ppa:neovim-ppa/unstable && \
     apt-get update && \
-    apt-get install -y neovim python-dev python-pip ctags konsole
+    apt-get install -y neovim \
+                       git \
+                       python-dev \
+                       python-pip \
+                       ctags \
+                       konsole
 
 RUN pip install --user neovim
 
