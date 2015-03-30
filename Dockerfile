@@ -10,12 +10,10 @@ RUN apt-get update && \
                        git \
                        python-dev \
                        python-pip \
-                       ctags \
-                       konsole
+                       ctags
 
 RUN pip install --user neovim
 
-ENV TERM konsole
 ENV NVIM_TUI_ENABLE_TRUE_COLOR 1
 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
