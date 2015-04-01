@@ -2,6 +2,8 @@ FROM ubuntu:14.04
 
 MAINTAINER erroneousboat <jpbruinsslot@gmail.com>
 
+ENV NVIM_TUI_ENABLE_TRUE_COLOR 1
+
 RUN apt-get update && \
     apt-get install -y software-properties-common && \
     add-apt-repository -y ppa:neovim-ppa/unstable && \
@@ -14,7 +16,7 @@ RUN apt-get update && \
 
 RUN pip install --user neovim
 
-ENV NVIM_TUI_ENABLE_TRUE_COLOR 1
+RUN ln -s /root/.nvim /root/.vim && ln -s /root/.nvimrc /root/.vimrc
 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
